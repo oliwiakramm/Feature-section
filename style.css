@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+/***** CSS VARIABLES *****/
+:root {
+  --builder-clr: hsl(0, 78%, 62%);
+  --supervisior-clr: hsl(180, 62%, 55%);
+  --karma-clr: hsl(34, 97%, 64%);
+  --calculator-clr: hsl(212, 86%, 64%);
+  --headings-clr: hsl(234, 12%, 34%);
+  --Paragr-clr: hsl(229, 6%, 66%);
+  --bg-clr: hsl(0, 0%, 98%);
+  --darkBuilder-clr: hsla(0, 78%, 62%, 0.8);
+  --darkSupervisor-clr: hsla(180, 62%, 55%, 0.8);
+  --darkKarma-clr: hsla(34, 97%, 64%, 0.8);
+  --darkCalculator-clr: hsla(212, 86%, 64%, 0.8);
+  --darkHeadings-clr: hsl(55, 12%, 78%);
+  --darkParagr-clr: hsl(0, 0%, 51%);
+  --darkBg-clr: hsl(0, 0%, 10%);
+}
+
+/***** CSS RESET *****/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/***** STYLING *****/
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--bg-clr);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  transition: background-color 0.5s ease-in;
+}
+
+.main {
+  margin: 3rem 2rem 2rem;
+}
+
+section {
+  text-align: center;
+}
+
+.secondary__heading {
+  font-size: clamp(1.52rem, 1rem + 1.6vw, 2.28rem);
+  font-weight: 200;
+  line-height: 1.5;
+  color: var(--headings-clr);
+}
+
+.secondary__heading span {
+  font-weight: 700;
+}
+
+.feature__info {
+  margin-top: 1rem;
+  font-size: 0.97rem;
+  line-height: 1.6;
+  color: var(--Paragr-clr);
+}
+
+.features__container {
+  margin-top: 4.7rem;
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  padding: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-top: 4px solid #000;
+  border-radius: 6px;
+  box-shadow: 0px 14px 24px -9px rgba(81, 84, 116, 0.3);
+  width: 16rem;
+  transition: background-color 0.4s ease-in;
+}
+
+.card:nth-child(1) {
+  border-color: var(--supervisior-clr);
+}
+
+.card:nth-child(2) {
+  border-color: var(--builder-clr);
+}
+
+.card:nth-child(3) {
+  border-color: var(--karma-clr);
+}
+
+.card:nth-child(4) {
+  border-color: var(--calculator-clr);
+}
+
+.card__heading {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--headings-clr);
+}
+
+.card__info {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--Paragr-clr);
+  font-weight: 200;
+}
+
+.card img {
+  margin-top: 2rem;
+  width: 3.7rem;
+  height: 3.7rem;
+  align-self: flex-end;
+}
+
+.mode__switch {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--headings-clr);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.mode__switch:active {
+  transform: scale(0.97);
+}
+
+.mode__switch:hover {
+  background-color: hsl(236, 12%, 25%);
+}
+
+.mode__switch i {
+  font-size: 1.2rem;
+}
+
+.mode__switch .hidden {
+  display: none;
+}
+
+.mode__switch .light__mode {
+  color: hsla(34, 97%, 64%);
+}
+
+.mode__switch .dark__mode {
+  color: var(--bg-clr);
+}
+
+@media (min-width: 44em) {
+  .feature__info {
+    max-width: 40rem;
+    margin: 1rem auto 0;
+  }
+
+  .features__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mode__switch {
+    top: 2rem;
+    right: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .main {
+    margin: 1.8rem 2rem 2rem;
+    max-width: 69.5rem;
+  }
+
+  .secondary__heading {
+    max-width: 33rem;
+    margin: 0 auto;
+  }
+
+  .feature__info {
+    max-width: 32rem;
+    font-size: 0.95rem;
+    margin-top: 0.65rem;
+  }
+
+  .features__container {
+    margin-top: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.9rem;
+  }
+
+  .card {
+    padding: 2rem;
+    width: 17.9rem;
+  }
+
+  .card:nth-child(1) {
+    grid-row: span 2;
+    align-self: center;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2/3;
+  }
+
+  .card:nth-child(4) {
+    grid-row: 1 / span 2;
+    grid-column: 3/-1;
+    align-self: center;
+  }
+
+  .card__info {
+    margin-top: 0.9rem;
+  }
+  .card img {
+    margin-top: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+/***** DARK MODE *****/
+
+body.dark {
+  background-color: var(--darkBg-clr);
+}
+body.dark .secondary__heading {
+  color: var(--darkHeadings-clr);
+}
+
+body.dark .feature__info {
+  color: var(--darkParagr-clr);
+}
+
+body.dark .card {
+  background-color: #100f0f;
+  box-shadow: 0px 14px 24px -9px rgba(30, 31, 43, 0.15);
+}
+
+body.dark .card__heading {
+  color: var(--darkHeadings-clr);
+}
+
+body.dark .feature__info {
+  color: var(--darkParagr-clr);
+}
+
+body.dark .card:nth-child(1) {
+  border-color: var(--darkSupervisor-clr);
+}
+
+body.dark .card:nth-child(2) {
+  border-color: var(--darkBuilder-clr);
+}
+
+body.dark .card:nth-child(3) {
+  border-color: var(--darkKarma-clr);
+}
+
+body.dark .card:nth-child(4) {
+  border-color: var(--darkCalculator-clr);
+}
+
+body.dark .card img {
+  filter: brightness(0.85);
+}
+
+body.dark .mode__switch {
+  background-color: var(--bg-clr);
+  opacity: 0.85;
+}
+
+body.dark .attribution {
+  color: var(--darkParagr-clr);
+}
