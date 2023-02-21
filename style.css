@@ -256,36 +256,55 @@ section {
   align-self: flex-end;
 }
 
-.mode__switch {
+.mode__box {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   top: 0.8rem;
   right: 1rem;
+}
+
+.mode__switch {
   width: 2.2rem;
   height: 2.2rem;
-  border: none;
   border-radius: 50%;
   background-color: var(--headings-clr);
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-}
-
-.mode__switch:active {
-  transform: scale(0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mode__switch:hover {
   background-color: hsl(236, 12%, 25%);
 }
 
-.mode__switch i {
-  font-size: 1.2rem;
+.mode__switch:active {
+  transform: scale(0.97);
 }
 
-.mode__switch .hidden {
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="checkbox"]:focus + label {
+  background-color: hsl(236, 12%, 25%);
+}
+input[type="checkbox"]:focus-visible + label .dark__mode {
+  color: hsla(34, 97%, 64%);
+}
+
+input[type="checkbox"]:focus-visible + label .light__mode {
+  color: rgb(253, 143, 0);
+}
+
+input[type="checkbox"]:checked + label .light__mode {
   display: none;
+}
+
+.mode__switch i {
+  font-size: 1.2rem;
 }
 
 .mode__switch .light__mode {
@@ -307,8 +326,6 @@ section {
   }
 
   .mode__switch {
-    top: 2rem;
-    right: 2rem;
     width: 2.5rem;
     height: 2.5rem;
   }
@@ -416,6 +433,18 @@ body.dark .card img {
 body.dark .mode__switch {
   background-color: var(--bg-clr);
   opacity: 0.85;
+}
+
+body.dark .mode__switch:hover {
+  background-color: hsl(0, 0%, 87%);
+}
+
+body.dark input[type="checkbox"]:focus + label {
+  background-color: hsl(0, 0%, 87%);
+}
+
+body.dark input[type="checkbox"] + label .dark__mode {
+  display: none;
 }
 
 body.dark .attribution {
