@@ -258,6 +258,9 @@ section {
 
 .mode__switch {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0.8rem;
   right: 1rem;
   width: 2.2rem;
