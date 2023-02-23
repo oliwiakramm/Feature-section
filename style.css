@@ -258,8 +258,8 @@ section {
 
 .mode__box {
   position: absolute;
-  top: 0.8rem;
-  right: 1rem;
+  top: 0.3rem;
+  right: 0.5rem;
 }
 
 .mode__switch {
@@ -323,6 +323,11 @@ input[type="checkbox"]:checked + label .light__mode {
 
   .features__container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mode__box {
+    top: 1rem;
+    right: 2rem;
   }
 
   .mode__switch {
